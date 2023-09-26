@@ -1,0 +1,33 @@
+body {
+    background-color:#fef2f0 ;
+    /* background-color:#bb5a3a; */
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+            border: solid;
+}
+.col {
+    border: 1px solid;
+}
+
+#session-timer {
+    border: solid 3px #bb5a3a;
+    border-radius: 10px;
+    
+}
+
+#timer {
+    font-size: 3rem;
+}
+
+#action-buttons {
+    width: 60%;    
+}
