@@ -6,36 +6,35 @@ function App() {
   const [sessionLength, setSessionLength] = useState(25);
   return (
     <Fragment>
-      <div id="main" className="container row justify-content-center">
-        <h1 className="text-center">25 + 5 Clock</h1>
-        <div id="" className="row mt-3">
-          <div className="col">
-            <h3 className="text-center">Break Length</h3>            
-            <div className="row">
-              <div className="col text-end"><i class="bi-arrow-up-circle-fill display-6"></i></div>
-              <div className="col text-center display-6">{breakLength}</div>
-              <div className="col text-start"><i class="bi-arrow-down-circle-fill display-6"></i></div>
+      <h1 className="text-center bg-dark text-white p-3">25 + 5 Clock</h1>
+      <div id="main" className="container">              
+        <div id="length" className="d-flex justify-content-evenly align-items-center">
+          <div>
+            <h4 className="text-center">Break Length</h4>            
+            <div className="d-flex justify-content-center">
+              <div className="p-1"><i class="bi-arrow-up-circle-fill display-6"></i></div>
+              <div className="display-6 p-1">{breakLength}</div>
+              <div className="p-1"><i class="bi-arrow-down-circle-fill display-6"></i></div>
             </div>
           </div>
-          <div className="col">
-            <h3 className="text-center">Session Length</h3>
-            <div className="row">
-              <div className="col text-end"><i class="bi-arrow-up-circle-fill display-6"></i></div>
-              <div className="col text-center display-6">{sessionLength}</div>
-              <div className="col text-start"><i class="bi-arrow-down-circle-fill display-6"></i></div>
+          <div>
+          <h4 className="text-center">Session Length</h4>            
+            <div className="d-flex justify-content-center">
+              <div className="p-1"><i class="bi-arrow-up-circle-fill display-6"></i></div>
+              <div className="display-6 p-1">{sessionLength}</div>
+              <div className="p-1"><i class="bi-arrow-down-circle-fill display-6"></i></div>
             </div>
           </div>
         </div>
-        <div id="session-timer" className="mt-3">
-          <h3 className="fs-2 text-center">Session</h3>
+        <div id="session-timer" className="d-flex flex-column justify-content-center mt-3">
+          <h2 className="text-center">Session</h2>
           <div id="timer" className="text-center">25:00</div>
         </div>
-        <div id="action-buttons" className="row mt-3">
-          <div className="col text-end"><i class="bi-play-circle-fill display-6"></i></div>
-          <div className="col text-center"><i class="bi-pause-circle-fill display-6"></i></div>
-          <div className="col text-start"><i class="bi-reply-fill display-6"></i></div>
-          
-        </div>
+        <div id="action-buttons" className="d-flex justify-content-center">
+              <div className="p-1"><i class="bi-play-circle-fill display-6"></i></div>
+              <div className="p-1"><i class="bi-pause-circle-fill display-6"></i></div>
+              <div className="p-1"><i class="bi-reply-fill display-6"></i></div>
+          </div>        
       </div>
     </Fragment>
   );
