@@ -7,13 +7,13 @@ body {
 }
 
 #length-btn-box {
-    height: 20%;
+    border: solid;
 }
 
 #session-timer-box {
     border: solid 3px black;
     border-radius: 10px;
-    height: 70%;    
+    
 }
 
 #time-left {
@@ -21,11 +21,23 @@ body {
 }
 
 #action-tbn-box {
-    height: 10%;
+    
 }
 
 @media (max-width: 992px) {
     .container {
         height: 100%;
+    }
+
+    #length-btn-box {
+        height: 30%;        
+    }
+
+    #session-timer-box {       
+        height: 55%;    
+    }
+
+    #action-tbn-box {
+        height: 15%;
     }
 }
