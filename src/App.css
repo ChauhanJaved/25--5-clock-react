@@ -3,29 +3,29 @@ body {
 }
 
 #root {
-    height: 100vh;    
+    height: 70vh;    
 }
 
-#length {
+#length-btn-box {
     height: 20%;
 }
 
-#session-timer {
+#session-timer-box {
     border: solid 3px black;
     border-radius: 10px;
     height: 70%;    
 }
 
-#timer {
+#time-left {
     font-size: 5rem;
 }
 
-#action-buttons {
+#action-tbn-box {
     height: 10%;
 }
 
 @media (max-width: 992px) {
     .container {
-        height: 80vh;
+        height: 100%;
     }
 }
