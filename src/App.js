@@ -1,14 +1,15 @@
 import "./App.css";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 
 function App() {
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
-  const [isPlaying, setIsPlaying] = useState (false);
-  const [timerType, setTimerType] = useState('session');
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [timerType, setTimerType] = useState("session");
   const [intervalID, setIntervalID] = useState(null);
-  const [currentMin, setCurrentMin] = useState(25);
-  const [currentSec, setCurrentSec] = useState (0);
+  const [curSeconds, setCurSeconds] = useState(1500);
+ 
   const breakLengthClick = (keyType) => {
     if (keyType === "D") {
       if (!(breakLength <= 1)) {
@@ -32,23 +33,40 @@ function App() {
     }
   };
   const playClick = () => {
-    if (isPlaying) {
-      setIsPlaying(false);
-    }else {
-      setIsPlaying(true);
-      setIntervalID(setInterval(timerFunction, 1000))
+    if (isPlaying) {      
+      clearInterval(intervalID)
+      setIsPaused(true);
+    } else {            
+      if (!isPaused) {
+        if (timerType === 'session') {
+          setCurSeconds(sessionLength * 60);
+        }else {
+          setCurSeconds(breakLength * 60);
+        }
+        setIntervalID(setInterval(timerFunction, 1000));        
+      }else {
+
+        setIntervalID(setInterval(timerFunction, 1000));        
+      };
+      
     }
   };
-  const timerFunction = () => {
-    currentMin
+  const timerFunction = () => {    
+    setCurSeconds((prevCurSeconds) => prevCurSeconds - 1);    
   };
-  const handleReset = ()  => {
+  const handleReset = () => {
     setBreakLength(5);
     setSessionLength(25);
-    setTimerType('session');
+    setTimerType("session");
     clearInterval(intervalID);
+    setCurSeconds(1500);
+    setIsPlaying(false);   
   };
-
+  const formatTime = () => {
+    const minutes = Math.floor(curSeconds / 60).toString().padStart(2,'0');
+    const seconds = (curSeconds % 60).toString().padStart(2,'0');
+    return `${minutes}:${seconds}`
+  };
   return (
     <Fragment>
       <h1 className='text-center bg-dark text-white p-3'>25 + 5 Clock</h1>
@@ -56,11 +74,11 @@ function App() {
         {/* PLAY PAUSE BOX */}
         <div id='action-tbn-box' className='d-flex justify-content-center align-items-center fs-6 mt-2'>
           <button id='start_stop' className='btn btn-dark text-center' onClick={playClick}>
-            {!isPlaying ? (
-            <i id='play' className='bi bi-play-circle-fill'></i>
-            ): (
+            {!isPaused ? (
+              <i id='play' className='bi bi-play-circle-fill'></i>
+            ) : (
               <i id='play' className='bi bi-pause-circle-fill'></i>
-            )}            
+            )}
           </button>
           <button className='btn btn-dark text-center m-3'>
             <i className='bi-stop-circle-fill'></i>
@@ -75,10 +93,12 @@ function App() {
             {timerType}
           </h2>
           <div id='time-left' className='text-center display-1'>
-            <strong>{currentMin}:{currentSec.toString().padStart(2,'0')}</strong>
+            <strong>
+              {formatTime()}
+            </strong>
           </div>
         </div>
-         {/* LENGTH SETTING BOX */}
+        {/* LENGTH SETTING BOX */}
         <div id='length-btn-box' className='d-flex justify-content-center flex-wrap mt-3 fs-6'>
           <div className='m-3'>
             <p id='break-label' className='text-center'>
