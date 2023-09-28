@@ -6,38 +6,45 @@ body {
     height: 70vh;    
 }
 
+.container {
+    height: 100%;
+}
+
 #length-btn-box {
-    border: solid;
+    /* border: solid; */
+    /* height: 30%; */
 }
 
 #session-timer-box {
     border: solid 3px black;
     border-radius: 10px;
+    height: 55%;
     
 }
 
 #time-left {
-    font-size: 5rem;
+    /* font-size: 5rem; */
 }
 
 #action-tbn-box {
-    
+    /* height: 15%; */
 }
 
-@media (max-width: 992px) {
+/*For desktop screen remove height straching properties*/
+@media (min-width: 992px) {
     .container {
-        height: 100%;
+        height: unset;
     }
 
     #length-btn-box {
-        height: 30%;        
+        height: unset;        
     }
 
     #session-timer-box {       
-        height: 55%;    
+        height: unset;    
     }
 
     #action-tbn-box {
-        height: 15%;
+        height: unset;
     }
 }
