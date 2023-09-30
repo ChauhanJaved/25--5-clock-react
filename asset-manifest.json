@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/25--5-clock-react/static/css/main.4e1f3d12.css",
-    "main.js": "/25--5-clock-react/static/js/main.1aa8516d.js",
+    "main.js": "/25--5-clock-react/static/js/main.20b2b87f.js",
     "static/js/787.c6b78094.chunk.js": "/25--5-clock-react/static/js/787.c6b78094.chunk.js",
-    "static/media/beep.wav": "/25--5-clock-react/static/media/beep.eb7efb446cad1ab0cfd2.wav",
+    "static/media/beep.mp3": "/25--5-clock-react/static/media/beep.e79e0abb7c74667ec9d7.mp3",
     "index.html": "/25--5-clock-react/index.html",
     "main.4e1f3d12.css.map": "/25--5-clock-react/static/css/main.4e1f3d12.css.map",
-    "main.1aa8516d.js.map": "/25--5-clock-react/static/js/main.1aa8516d.js.map",
+    "main.20b2b87f.js.map": "/25--5-clock-react/static/js/main.20b2b87f.js.map",
     "787.c6b78094.chunk.js.map": "/25--5-clock-react/static/js/787.c6b78094.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4e1f3d12.css",
-    "static/js/main.1aa8516d.js"
+    "static/js/main.20b2b87f.js"
   ]
 }
