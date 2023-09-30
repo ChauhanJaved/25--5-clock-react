@@ -1,6 +1,6 @@
 import "./App.css";
 import { Fragment, useState, useEffect, useRef } from "react";
-import beepSound from "./beep.wav";
+import beepSound from "./beep.mp3";
 
 function App() {
   const [breakLength, setBreakLength] = useState(5);
