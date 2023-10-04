@@ -141,32 +141,6 @@ function App() {
         {/* LENGTH SETTING BOX */}
         <div id='length-btn-box' className='d-flex justify-content-center flex-wrap mt-3 fs-6'>
           <div className='m-3'>
-            <p id='break-label' className='text-center'>
-              Break Length
-            </p>
-            <div className='d-flex justify-content-center align-items-center'>
-              <button
-                id='break-decrement'
-                className='btn btn-dark text-center'
-                onClick={() => {
-                  breakLengthClick("D");
-                }}>
-                <i className='bi-arrow-down-circle-fill'></i>
-              </button>
-              <div id='break-length' className='fs-3 p-3'>
-                {breakLength}
-              </div>
-              <button
-                id='break-increment'
-                className='btn btn-dark text-center'
-                onClick={() => {
-                  breakLengthClick("U");
-                }}>
-                <i className='bi-arrow-up-circle-fill'></i>
-              </button>
-            </div>
-          </div>
-          <div className='m-3'>
             <p id='session-label' className='text-center'>
               Session Length
             </p>
@@ -187,6 +161,32 @@ function App() {
                 className='btn btn-dark text-center'
                 onClick={() => {
                   sessionLengthClick("U");
+                }}>
+                <i className='bi-arrow-up-circle-fill'></i>
+              </button>
+            </div>
+          </div>
+          <div className='m-3'>
+            <p id='break-label' className='text-center'>
+              Break Length
+            </p>
+            <div className='d-flex justify-content-center align-items-center'>
+              <button
+                id='break-decrement'
+                className='btn btn-dark text-center'
+                onClick={() => {
+                  breakLengthClick("D");
+                }}>
+                <i className='bi-arrow-down-circle-fill'></i>
+              </button>
+              <div id='break-length' className='fs-3 p-3'>
+                {breakLength}
+              </div>
+              <button
+                id='break-increment'
+                className='btn btn-dark text-center'
+                onClick={() => {
+                  breakLengthClick("U");
                 }}>
                 <i className='bi-arrow-up-circle-fill'></i>
               </button>

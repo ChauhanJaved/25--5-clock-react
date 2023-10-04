@@ -10,41 +10,18 @@ body {
     height: 100%;
 }
 
-#length-btn-box {
-    /* border: solid; */
-    /* height: 30%; */
-}
-
 #session-timer-box {
     border: solid 3px black;
     border-radius: 10px;
-    height: 55%;
-    
+    height: 55%;    
 }
 
-#time-left {
-    /* font-size: 5rem; */
-}
-
-#action-tbn-box {
-    /* height: 15%; */
-}
-
-/*For desktop screen remove height straching properties*/
+/*Remove height stretching properties for the desktop screen*/
 @media (min-width: 992px) {
     .container {
         height: unset;
     }
-
-    #length-btn-box {
-        height: unset;        
-    }
-
     #session-timer-box {       
         height: unset;    
-    }
-
-    #action-tbn-box {
-        height: unset;
     }
 }
